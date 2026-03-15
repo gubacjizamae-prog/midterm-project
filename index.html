@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>BarangayConnect</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+  <h1>BarangayConnect</h1>
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#officials">Officials</a>
+    <a href="#services">Services</a>
+    <a href="#announcements">Announcements</a>
+    <a href="#contact">Contact</a>
+  </nav>
+  <button id="themeBtn">🌙 Theme</button>
+</header>
+
+<section id="home">
+  <h2>Welcome to BarangayConnect</h2>
+  <p>Your one-stop portal for barangay services, announcements, and community information.</p>
+</section>
+
+<section id="officials">
+  <h2>Barangay Officials</h2>
+  <div class="grid" id="officialsContainer">
+    <!-- Officials cards inserted via JS -->
+  </div>
+</section>
+
+<section id="services">
+  <h2>Barangay Services</h2>
+  <input type="text" id="searchService" placeholder="Search services...">
+  <div class="grid">
+    <div class="card service" onclick="openService('Barangay Clearance','Requirements: Valid ID, Cedula. Processing Time: 10 minutes.')">
+      <h3>Barangay Clearance</h3>
+      <p>Required for employment or school.</p>
+    </div>
+    <div class="card service" onclick="openService('Certificate of Residency','Requirements: Valid ID and proof of address.')">
+      <h3>Certificate of Residency</h3>
+      <p>Proof that you live in the barangay.</p>
+    </div>
+    <div class="card service" onclick="openService('Business Permit Endorsement','Requirements: Business form, Valid ID.')">
+      <h3>Business Permit Endorsement</h3>
+      <p>For small businesses.</p>
+    </div>
+    <div class="card service" onclick="openService('Complaint Filing','Residents can report issues to barangay officials.')">
+      <h3>Complaint Filing</h3>
+      <p>Report community concerns.</p>
+    </div>
+  </div>
+</section>
+
+<section id="announcements">
+  <h2>Community Announcements</h2>
+  <input id="announcementSearch" placeholder="Search announcements...">
+  <div id="announcementContainer" class="grid">
+    <!-- Announcements cards inserted via JS -->
+  </div>
+</section>
+
+<section id="contact">
+  <h2>Contact Barangay Office</h2>
+  <p><b>Location:</b> Barangay Hall, Capitol Site, Cebu City</p>
+  <p><b>Phone:</b> 0912-345-6789</p>
+  <iframe width="100%" height="250" style="border:0" loading="lazy" allowfullscreen
+    src="https://maps.google.com/maps?q=Capitol%20Site%20Cebu&t=&z=15&ie=UTF8&iwloc=&output=embed">
+  </iframe>
+  <form id="contactForm">
+    <input type="text" id="name" placeholder="Name">
+    <input type="email" id="email" placeholder="Email">
+    <textarea id="message" placeholder="Message"></textarea>
+    <button type="submit">Send</button>
+  </form>
+</section>
+
+<footer>
+  <p>BarangayConnect © 2026</p>
+</footer>
+
+<!-- Modals -->
+<div id="serviceModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal()">×</span>
+    <h2 id="serviceTitle"></h2>
+    <p id="serviceDescription"></p>
+  </div>
+</div>
+
+<div id="announcementModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeAnnouncementModal()">×</span>
+    <h2 id="announcementTitle"></h2>
+    <p><b>Time:</b> <span id="announcementTime"></span></p>
+    <p><b>Location:</b> <span id="announcementLocation"></span></p>
+    <p id="announcementDescription"></p>
+  </div>
+</div>
+
+<div id="officialModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeOfficialModal()">×</span>
+    <h2 id="officialName"></h2>
+    <p><b>Position:</b> <span id="officialPosition"></span></p>
+    <p><b>Age:</b> <span id="officialAge"></span></p>
+    <p><b>Schedule:</b> <span id="officialSchedule"></span></p>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
